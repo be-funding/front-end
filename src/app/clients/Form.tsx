@@ -28,7 +28,7 @@ export default function Form({ closeForm }: FormProps) {
 
   const mutation = useMutation({
     mutationFn: async (formData) =>
-      await axios.post('http://localhost:8080/api/clients', formData),
+      await axios.post('https://back-end-nine-rho.vercel.app/clients', formData),
     onSuccess: () => {
       queryClient.invalidateQueries('clients' as any);
     }

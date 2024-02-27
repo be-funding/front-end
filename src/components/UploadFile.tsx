@@ -17,7 +17,7 @@ export default function UploadFile({ service }: UploadFileProps) {
 
   const mutation = useMutation({
     mutationFn: async (formData) =>
-      await axios.post(`http://localhost:8080/api/${service}/excel`, formData),
+      await axios.post(`https://back-end-nine-rho.vercel.app/${service}/excel`, formData),
     onSuccess: () => {
       queryClient.invalidateQueries('clients' as any);
     }

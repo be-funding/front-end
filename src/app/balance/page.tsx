@@ -20,7 +20,7 @@ export default function Home() {
   const { isPending, error, data } = useQuery<number>({
     queryKey: ['clients'],
     queryFn: async () =>
-      await axios.get('http://localhost:8080/api/balance')
+      await axios.get('https://back-end-nine-rho.vercel.app/balance')
         .then(res => res.data)
   });
 
