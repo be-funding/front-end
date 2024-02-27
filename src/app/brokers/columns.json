@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Time", 
+    "label": "Registration date"
+  },
+  {
+    "id": "Email", 
+    "label": "Email",
+    "hasInput": true
+  },
+  {
+    "id": "Nombre", 
+    "label": "Nombre",
+    "hasInput": true
+  },
+  {
+    "id": "Apellido", 
+    "label": "Apellido",
+    "hasInput": true
+  },
+  {
+    "id": "Currency", 
+    "label": "IB Type",
+    "isIbType": true
+  },
+  {
+    "id": "Clients", 
+    "label": "Clients"
+  },
+  {
+    "id": "Rewards", 
+    "label": "Rewards"
+  }
+]

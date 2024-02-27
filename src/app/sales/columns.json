@@ -1,0 +1,55 @@
+[
+  {
+    "id": "Login", 
+    "label": "Login",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  },
+  {
+    "id": "Email", 
+    "label": "Email",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  },
+  {
+    "id": "Transaction Time", 
+    "label": "Transaction Time"
+  },
+  {
+    "id": "Amount", 
+    "label": "Amount",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  },
+  {
+    "id": "Currency", 
+    "label": "Currency",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  },
+  {
+    "id": "Payment Method", 
+    "label": "Product",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  },
+  {
+    "id": "Codigo Bono", 
+    "label": "Código promocional",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  },
+  {
+    "id": "Descuento", 
+    "label": "Descuento",
+    "hasInput": true,
+    "minWidth": 100,
+    "inputBelow": true
+  }
+]

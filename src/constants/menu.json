@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "name": "Clients",
+    "path": "/clients"
+  },
+  {
+    "id": 1,
+    "name": "Deposits",
+    "path": "/deposits"
+  },
+  {
+    "id": 2,
+    "name": "Withdrawals",
+    "path": "/withdrawals"
+  },
+  {
+    "id": 3,
+    "name": "Balance",
+    "path": "/balance"
+  },
+  {
+    "id": 4,
+    "name": "Sales dashboard",
+    "path": "/sales"
+  },
+  {
+    "id": 5,
+    "name": "Introducing brokers",
+    "path": "/brokers"
+  },
+  {
+    "id": 6,
+    "name": "Cerrar sesion",
+    "path": "/logout"
+  }
+]

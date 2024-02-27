@@ -1,0 +1,36 @@
+[
+  {
+    "id": "Time", 
+    "label": "Created"
+  },
+  {
+    "id": "transaction_id", 
+    "label": "Transaction ID"
+  },
+  {
+    "id": "Email", 
+    "label": "Email",
+    "hasInput": true
+  },
+  {
+    "id": "Amount", 
+    "label": "Amount"
+  },
+  {
+    "id": "Net Amount", 
+    "label": "Net Amount"
+  },
+  {
+    "id": "Currency", 
+    "label": "Currency"
+  },
+  {
+    "id": "Status", 
+    "label": "Status",
+    "hasStatusColors": true
+  },
+  {
+    "id": "Payment Gateway", 
+    "label": "Payment Gateway"
+  }
+]

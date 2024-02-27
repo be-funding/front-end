@@ -1,0 +1,32 @@
+[
+  {
+    "id": "create_time", 
+    "label": "Create Time"
+  },
+  {
+    "id": "Email", 
+    "label": "Email",
+    "hasInput": true
+  },
+  {
+    "id": "Nombre", 
+    "label": "Nombre",
+    "hasInput": true
+  },
+  {
+    "id": "Apellidos", 
+    "label": "Apellidos",
+    "hasInput": true
+  },
+  {
+    "id": "Status", 
+    "label": "Status",
+    "hasInput": true,
+    "isClientsStatus": true
+  },
+  {
+    "id": "Country", 
+    "label": "Country",
+    "hasInput": true
+  }
+]
