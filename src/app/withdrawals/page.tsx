@@ -26,7 +26,7 @@ export default function Clients() {
   const { isPending, error, data } = useQuery<any[]>({
     queryKey: ['withdrawals'],
     queryFn: () =>
-      fetch('https://back-end-nine-rho.vercel.app/withdrawals').then((res) =>
+      fetch('https://back-end-nine-rho.vercel.app/api/withdrawals').then((res) =>
         res.json(),
       ),
   });

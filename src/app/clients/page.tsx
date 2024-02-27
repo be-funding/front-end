@@ -33,7 +33,7 @@ export default function Clients() {
   const { isPending, error, data } = useQuery<any[]>({
     queryKey: ['clients'],
     queryFn: async () =>
-      await axios.get('https://back-end-nine-rho.vercel.app/clients')
+      await axios.get('https://back-end-nine-rho.vercel.app/api/clients')
         .then(res => res.data)
   });
 
