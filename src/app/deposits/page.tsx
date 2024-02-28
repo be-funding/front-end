@@ -26,7 +26,7 @@ export default function Clients() {
   const { isPending, error, data } = useQuery<any[]>({
     queryKey: ['deposits'],
     queryFn: () =>
-      fetch('https://back-end-nine-rho.vercel.app/api/deposits').then((res) =>
+      fetch('https://back-end-orpin-psi.vercel.app/api/deposits').then((res) =>
         res.json(),
       ),
   });
