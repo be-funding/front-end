@@ -12,6 +12,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 import StatusButtons from './StatusButtons';
+import TablePagination from '@mui/material/TablePagination';
+
 
 // @scripts
 import { convertToReadableDate } from '../utils/convertToReadableDate';
@@ -41,6 +43,18 @@ interface TableProps<T> {
 }
 
 export default function CustomTable<T>({ columns, rows, onChange, inputValues }: TableProps<T>) {
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event: unknown, newPage: number) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 500 }}>
@@ -76,7 +90,9 @@ export default function CustomTable<T>({ columns, rows, onChange, inputValues }:
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row, index) => (
+            {rows
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row, index) => (
               <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                 {columns.map((column, index) => {
                   const cellValue = (row as any)[column.id];
@@ -97,6 +113,15 @@ export default function CustomTable<T>({ columns, rows, onChange, inputValues }:
           </TableBody>
         </Table>
       </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+      />
     </Paper>
   );
 }
