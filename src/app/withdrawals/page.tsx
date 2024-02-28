@@ -54,7 +54,7 @@ export default function Clients() {
 
   const applyFilters = () => {
     return data.filter(row => {
-      if (!row.date) {
+      if (!row.Time) {
         const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
           row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
         );
@@ -65,7 +65,7 @@ export default function Clients() {
         row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
       );
   
-      const dateParts: any[] = row.date.split(/\D/);
+      const dateParts: any[] = row.Time.split(/\D/);
       const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
   
       const rowDate = new Date(date).getTime();
