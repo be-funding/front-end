@@ -59,7 +59,18 @@ export default function Clients() {
   if (isPending) return <Loading />
 
   const applyFilters = () => {
-    return data.filter(row => {
+    const sortedRows = [...data].sort((a, b) => {
+      const dateA = new Date(a.create_time);
+      const dateB = new Date(b.create_time);
+      
+      if (!isNaN(dateA.getTime()) && !isNaN(dateB.getTime())) {
+        return dateB.getTime() - dateA.getTime();
+      } else {
+        return 0;
+      }
+    });
+  
+    return sortedRows.filter(row => {
       if (!row.create_time) {
         const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
           row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
@@ -102,7 +113,6 @@ export default function Clients() {
         <Form closeForm={() => setOpen(false)} />
       </Dialog>
       <FilterControls
-        // createButton
         endDate={endDate}
         handleApplyDateFilter={handleApplyDateFilter}
         handleClearFilters={handleClearFilters}

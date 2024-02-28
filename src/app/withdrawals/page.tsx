@@ -53,7 +53,18 @@ export default function Clients() {
   if (isPending) return <Loading />
 
   const applyFilters = () => {
-    return data.filter(row => {
+    const sortedRows = [...data].sort((a, b) => {
+      const dateA = new Date(a.Time);
+      const dateB = new Date(b.Time);
+      
+      if (!isNaN(dateA.getTime()) && !isNaN(dateB.getTime())) {
+        return dateB.getTime() - dateA.getTime();
+      } else {
+        return 0;
+      }
+    });
+
+    return sortedRows.filter(row => {
       if (!row.Time) {
         const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
           row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
