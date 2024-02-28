@@ -1,7 +1,7 @@
 [
   {
-    "id": "Time", 
-    "label": "Registration date"
+    "id": "Registration_Date", 
+    "label": "Registration Date"
   },
   {
     "id": "Email", 

@@ -65,7 +65,7 @@ export default function Clients() {
     });
 
     return sortedRows.filter(row => {
-      if (!row.Time) {
+      if (!row['Registration_Date']) {
         const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
           row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
         );
@@ -76,7 +76,7 @@ export default function Clients() {
         row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
       );
   
-      const dateParts: any[] = row.Time.split(/\D/);
+      const dateParts: any[] = row['Registration_Date'].split(/\D/);
       const date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
   
       const rowDate = new Date(date).getTime();
