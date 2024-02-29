@@ -9,8 +9,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from '@mui/material/styles';
 import { usePathname } from 'next/navigation';
 
-import type { Metadata } from 'next'
-
 // @components
 import Navigation from '@/components/Navigation';
 
@@ -20,11 +18,6 @@ import theme from '@/theme';
 // @interfaces
 interface LayoutProps {
   children: React.ReactNode;
-}
-
-export const metadata = {
-  title: '...',
-  description: '...',
 }
 
 export default function RootLayout({ children }: LayoutProps) {
