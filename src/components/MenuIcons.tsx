@@ -11,24 +11,25 @@ import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 // @interfaces
 interface MenuIconsProps {
   menu: string;
+  isSelected: boolean;
 }
 
-export default function MenuIcons({ menu }: MenuIconsProps) {
+export default function MenuIcons({ menu, isSelected }: MenuIconsProps) {
   switch (menu) {
     case '/clients':
-      return <GridViewRoundedIcon />;
+      return <GridViewRoundedIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />;
     case '/deposits':
-      return <AccountBalanceRoundedIcon />;
+      return <AccountBalanceRoundedIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />;
     case '/withdrawals':
-      return <RequestQuoteIcon />;;
+      return <RequestQuoteIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />;
     case '/balance':
-      return <BusinessCenterRoundedIcon />;
+      return <BusinessCenterRoundedIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />;
     case '/sales':
-      return <BarChartIcon />;
+      return <BarChartIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />;
     case '/brokers':
-      return <GroupsRoundedIcon />
+      return <GroupsRoundedIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />
     case '/logout':
-      return <LogoutIcon />
+      return <LogoutIcon sx={{ color: isSelected ? 'red' : 'inherit' }} />
     default:
       return null;
   }

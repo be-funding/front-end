@@ -32,14 +32,16 @@ export default function Sidebar() {
             key={item.id}
             sx={{
               backgroundColor: item.path === path ? grey[300] : 'transparent',
-              color: 'black' 
+              borderLeft: item.path === path ? '5px solid red' : 'transparent',
+              color: 'black',
+              py: 1
             }}
           >
             <ListItemButton>
               <ListItemIcon>
-                <MenuIcons menu={item.path} />
+                <MenuIcons menu={item.path} isSelected={item.path === path} />
               </ListItemIcon>
-              <ListItemText primary={item.name} />
+              <ListItemText sx={{ color: grey[600] }} primary={item.name.toLocaleUpperCase()} />
             </ListItemButton>
           </ListItem>
         ) : (

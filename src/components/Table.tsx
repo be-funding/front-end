@@ -6,14 +6,15 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 import StatusButtons from './StatusButtons';
 import TablePagination from '@mui/material/TablePagination';
-
+import { styled } from '@mui/material/styles';
+import { blueGrey, grey } from '@mui/material/colors';
 
 // @scripts
 import { convertToReadableDate } from '../utils/convertToReadableDate';
@@ -42,6 +43,13 @@ interface TableProps<T> {
   inputValues: { [key: string]: string };
 }
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: blueGrey[400],
+    color: theme.palette.common.white,
+  }
+}));
+
 export default function CustomTable<T>({ columns, rows, onChange, inputValues }: TableProps<T>) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -59,11 +67,11 @@ export default function CustomTable<T>({ columns, rows, onChange, inputValues }:
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 500 }}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead sx={{ backgroundColor: 'red' }}>
+          <TableHead>
             <TableRow>
               {columns.map((column, index) => (
                 <React.Fragment key={index}>
-                  <TableCell sx={{ minWidth: column?.minWidth }}>
+                  <StyledTableCell sx={{ minWidth: column?.minWidth }}>
                     <Box 
                       sx={{
                         alignItems: "center",
@@ -81,10 +89,11 @@ export default function CustomTable<T>({ columns, rows, onChange, inputValues }:
                           size="small"
                           value={inputValues[column.id.toString()] || ''}
                           variant="outlined"
+                          sx={{ backgroundColor: grey[200] }}
                         />
                       )}
                     </Box>
-                  </TableCell>
+                  </StyledTableCell>
                 </React.Fragment>
               ))}
             </TableRow>
