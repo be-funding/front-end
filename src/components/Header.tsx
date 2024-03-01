@@ -18,7 +18,7 @@ export default function Header() {
             alt="logo"
             priority
             src={image}
-            width={70}
+            width={90}
           />
           <Typography sx={{ fontSize: 30, fontWeight: 600, fontFamily: 'monospace' }}>
             Be

@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <Paper elevation={3} sx={{ width: 500, ml: 3 }}>
       <Typography variant="h4" sx={{ p: '30px 0 0 30px' }}>
-        Consulta de balance
+        Consulta de wallet
       </Typography>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Image
@@ -46,7 +46,7 @@ export default function Home() {
         />
         <Box>
           <Typography variant="h5" mb={2}>
-            Balance: {formattedCurrency}
+            Wallet: {formattedCurrency}
           </Typography>
         </Box>
       </Box>
