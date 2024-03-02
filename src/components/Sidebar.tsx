@@ -8,6 +8,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import NextLink from 'next/link';
+import Typography from '@mui/material/Typography';
 import { grey } from '@mui/material/colors';
 import { usePathname } from 'next/navigation';
 
@@ -33,15 +34,18 @@ export default function Sidebar() {
             sx={{
               backgroundColor: item.path === path ? grey[300] : 'transparent',
               borderLeft: item.path === path ? '5px solid red' : 'transparent',
-              color: 'black',
-              py: 1
+              color: 'black'
             }}
           >
             <ListItemButton>
               <ListItemIcon>
                 <MenuIcons menu={item.path} isSelected={item.path === path} />
               </ListItemIcon>
-              <ListItemText sx={{ color: grey[600] }} primary={item.name.toLocaleUpperCase()} />
+              <ListItemText sx={{ color: grey[600] }} primary={
+                <Typography fontSize={13}>
+                  {item.name.toLocaleUpperCase()}
+                </Typography>
+              } />
             </ListItemButton>
           </ListItem>
         ) : (

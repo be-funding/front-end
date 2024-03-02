@@ -39,13 +39,6 @@
     "inputBelow": true
   },
   {
-    "id": "Codigo Bono", 
-    "label": "Código promocional",
-    "hasInput": true,
-    "minWidth": 100,
-    "inputBelow": true
-  },
-  {
     "id": "Descuento", 
     "label": "Descuento",
     "hasInput": true,

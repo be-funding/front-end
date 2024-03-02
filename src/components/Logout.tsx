@@ -7,6 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import NextLink from 'next/link';
+import Typography from '@mui/material/Typography';
 import { grey } from '@mui/material/colors';
 
 // @components
@@ -38,7 +39,11 @@ export default function Sidebar() {
         <ListItemIcon>
           <MenuIcons menu="/logout" isSelected={false} />
         </ListItemIcon>
-        <ListItemText sx={{ color: grey[600] }} primary="LOGOUT" />
+        <ListItemText sx={{ color: grey[600] }} primary={
+          <Typography fontSize={13}>
+            LOGOUT
+          </Typography>
+        } />
       </ListItemButton>
     </ListItem>
   );

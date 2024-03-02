@@ -40,13 +40,13 @@ export default function Navigation({ children, isLogin }: NavigationProps) {
           <Header />
           <Box sx={{ flexGrow: 1 }}>
             <Grid container>
-              <Grid item xs={1.5}>
+              <Grid item xs={1.8}>
                 <Sidebar/>
               </Grid>
               <Grid
                 item
                 sx={{ backgroundColor: theme.palette.primary.main }}
-                xs={10.5}
+                xs={10.2}
               >
                 {children}
               </Grid>

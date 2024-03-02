@@ -15,7 +15,7 @@ export const useClientsExcelDownload = ({
 }: ClientsExcelDownloadProps): { handleDownloadExcel: () => void } => {
   const handleDownloadExcel = () => {
     const filteredKeys = filteredData.map(data => {
-      const { _id, __v, ...rest } = data;
+      const { _id, __v, 'Codigo Bono': codigoBono, ...rest } = data;
       return rest;
     });
 
