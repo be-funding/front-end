@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 import Dialog from '@mui/material/Dialog';
 import axios from 'axios';
 import { useTheme } from '@mui/material/styles';
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query';
 
 // @components
 import Error from '@/components/Error';
@@ -77,7 +77,7 @@ export default function Clients() {
         );
         return matchesInputValues;
       }
-  
+        
       const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
         row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
       );

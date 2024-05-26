@@ -6,6 +6,9 @@ import Container from '@mui/material/Container';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query'
 
+// @utils
+import { parseDate } from '@/utils/parseDate';
+
 // @components
 import Error from '@/components/Error';
 import FilterControls from '@/components/FilterControls';
@@ -71,6 +74,8 @@ export default function Clients() {
         );
         return matchesInputValues;
       }
+
+      row['Transaction Time'] = parseDate(row['Transaction Time']);
   
       const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
         row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())

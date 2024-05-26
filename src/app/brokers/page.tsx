@@ -4,7 +4,10 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import axios from 'axios';
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query';
+
+// @utils
+import { parseDate } from '@/utils/parseDate';
 
 // @components
 import Error from '@/components/Error';
@@ -71,6 +74,8 @@ export default function Clients() {
         );
         return matchesInputValues;
       }
+
+      row['Registration Date'] = parseDate(row['Registration Date']);
   
       const matchesInputValues = Object.entries(inputValues).every(([key, filterValue]) =>
         row[key as keyof typeof row]?.toString().toLowerCase().includes(filterValue.toLowerCase())
